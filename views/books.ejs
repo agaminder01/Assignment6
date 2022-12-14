@@ -1,0 +1,15 @@
+<html>
+<body>
+<main>
+    <h1>Books List</h1>
+    <% books.forEach(s =>
+    { %> <p>
+        <a href= "<%= `/books/${s._id}` %>">
+            <img src= <%= s.Bookimage%>  /> <%= s.Name%> </a> </p>
+    </p> 
+    <%
+    }
+    )%>
+    </main>
+</body>
+</html>

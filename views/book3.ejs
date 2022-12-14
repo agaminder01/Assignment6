@@ -1,0 +1,16 @@
+<body>
+    <main>
+        <% books.forEach(s =>
+    { %> <h1><%= s.Name%> </h1>
+        <div style="float: left;">
+        <img src=<%= s.Bookimage%> height="600" width="400">
+        </div>
+        <div style="padding-left: 500px; padding-top: 100px; font-size: large;">
+        <%= s.Description %>
+        </div> 
+         
+    <%
+    }
+    )%>
+    </main>
+</body>
