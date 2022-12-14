@@ -13,19 +13,17 @@
   <tbody>
     <% books.forEach(book=> { %>
       <tr>
-        <!-- <td>
-        <%= books.fullName %>
-      </td> -->
+        
         <td>
           <a href="<%= `/books/${book._id}` %>">
-            <%= book._id %>
-          </a>
+                <%= book._id %>
+            </a>
         </td>
         <td>
           <%= book.Name %>
         </td>
         <td>
-          <%= book.AuthorName %>
+          <%= book.Authorname %>
         </td>
         <td>
           <a href="<%= `books/${book._id}/delete?_method=DELETE` %>"

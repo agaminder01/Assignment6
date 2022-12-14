@@ -27,7 +27,7 @@ app.get("/home", controller.home)
 app.get("/bookslist", controller.index)
 app.get("/books/:id", controller.show, controller.showView)
 app.get("/admin", controller.admin)
-app.get("/addnewadmin", controller.new)
+app.get("/addnewbook", controller.new)
 app.post("/books/create", controller.create, controller.redirectView);
 app.delete("/books/:id/delete", controller.delete, controller.redirectView);
 

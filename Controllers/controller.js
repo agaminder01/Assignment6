@@ -45,9 +45,9 @@ module.exports = {
   },
   create: (req, res, next) => {
     let bookParams = {
-      id: req.body.id,
+      ID: req.body.ID,
       Name: req.body.Name,
-      AuthorName: req.body.AuthorName
+      Authorname: req.body.Authorname
     };
     model.create(bookParams)
       .then(user => {
