@@ -20,6 +20,8 @@ app.get("/", controller.home)
 app.get("/home", controller.home)
 app.get("/bookslist", controller.index)
 app.get("/books/:id", controller.show, controller.showView)
+app.get("/admin", controller.admin)
+app.get("/addnewadmin", controller.new)
 app.use(layout)
 app.set("layout", "layout")
 app.use(express.json())
@@ -34,7 +36,6 @@ db.once("open", () => {
     console.log("Successfully connected to MongoDB using Mongoose!");
 });
 
-app.get("/bookslist", controller.index);
 
 app.all('*', (req, res) => {
     res.status(404).send('<h1>404! Page not found</h1>');
