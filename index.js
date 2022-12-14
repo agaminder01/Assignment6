@@ -4,6 +4,7 @@ const controller = require("./Controllers/controller");
     app = express();
     model = require("./Models/model");
     layout = require("express-ejs-layouts")
+    methodOverride = require("method-override");
 
 app.set("view engine", "ejs")
 app.set("port", process.env.PORT || 3000);
@@ -13,6 +14,11 @@ app.use(
       extended: false,
     })
 );
+app.use(
+    methodOverride("_method", {
+      methods: ["POST", "GET"]
+    })
+  );
 app.use(layout)
 app.set("layout", "layout")
 require("dotenv").config();
@@ -22,6 +28,9 @@ app.get("/bookslist", controller.index)
 app.get("/books/:id", controller.show, controller.showView)
 app.get("/admin", controller.admin)
 app.get("/addnewadmin", controller.new)
+app.post("/books/create", controller.create, controller.redirectView);
+app.delete("/books/:id/delete", controller.delete, controller.redirectView);
+
 app.use(layout)
 app.set("layout", "layout")
 app.use(express.json())
